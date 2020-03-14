@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.logo h1 {
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #05632f;
+    text-align: center;
+}
+.nav-bg {
+    background: #05632f;
+}
+
+nav a {
+    margin: 0;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: .5s;
+}
+nav a:hover{
+    background-color: aquamarine;
+    color:#05632f;
+}
