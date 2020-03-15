@@ -1,26 +1,40 @@
 import React, { useState } from 'react';
 import './Friend.css';
 import fakeData from '../../fakeData';
+import Fditem from '../Fditem/Fditem';
 
 
 const Friend = () => {
      const frist15 = fakeData.slice(0, 15);
      const [friends, setFriends] = useState(frist15);
+
+     const [frdetails, setFrdetails] = useState([]);
     
+     const handleFriendItem = (friend) => {
+        //  console.log("Single Item", friend);
+         const newItem = [...frdetails, friend];
+         setFrdetails(newItem);
+     }
 
 
     return (
         <div className="friend-sec">
             <div className="container friendDiv">
                 <div className="friends-area">
-                    <ul>
+                   
                         {
-                            friends.map(fd => <div>{fd.name}</div>)
+                            friends.map(fd => <Fditem 
+                                handleFriendItem = {handleFriendItem}
+                                frd={fd}
+                                >
+
+                                </Fditem>)
                         }
-                    </ul>
+                    
                 </div>
                 <div className="friends-about">
-                    <h3>About Friens</h3>
+                    <h3>About Friends</h3>
+                    <h5>Friend Item {frdetails.length}</h5>
                 </div>
                 
             </div>

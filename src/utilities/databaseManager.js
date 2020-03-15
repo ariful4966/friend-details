@@ -10,32 +10,32 @@ const getUser = () => {
 }
 
 
-const getDataKey = () => {
+const getDataemail = () => {
     const userId = getUser();
     return `emaJohn/carts/${userId}`
 }
 
 // push to local storage: a temporary place for database
 const getDatabaseCart = () => {
-    const dataKey = getDataKey();
-    const data = localStorage.getItem(dataKey) || "{}";
+    const dataemail = getDataemail();
+    const data = localStorage.getItem(dataemail) || "{}";
     return JSON.parse(data);
 }
 
-const addToDatabaseCart = (key, count) => {
+const addToDatabaseCart = (email, count) => {
     const currentCart = getDatabaseCart();
-    currentCart[key] = count;
-    localStorage.setItem(getDataKey(), JSON.stringify(currentCart));
+    currentCart[email] = count;
+    localStorage.setItem(getDataemail(), JSON.stringify(currentCart));
 }
 
-const removeFromDatabaseCart = key => {
+const removeFromDatabaseCart = email => {
     const currentCart = getDatabaseCart();
-    delete currentCart[key];
-    localStorage.setItem(getDataKey(), JSON.stringify(currentCart));
+    delete currentCart[email];
+    localStorage.setItem(getDataemail(), JSON.stringify(currentCart));
 }
 
 const processOrder = (cart) => {
-    localStorage.removeItem(getDataKey());
+    localStorage.removeItem(getDataemail());
 }
 
 
@@ -46,11 +46,11 @@ export { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrde
 const localStorage = window.localStorage || (() => {
   let store = {}
   return {
-    getItem(key) {
-      return store[key]
+    getItem(email) {
+      return store[email]
     },
-    setItem(key, value) {
-      store[key] = value.toString()
+    setItem(email, value) {
+      store[email] = value.toString()
     },
     clear() {
       store = {}
@@ -61,11 +61,11 @@ const localStorage = window.localStorage || (() => {
 const sessionStorage = window.sessionStorage || (() => {
   let store = {}
   return {
-    getItem(key) {
-      return store[key]
+    getItem(email) {
+      return store[email]
     },
-    setItem(key, value) {
-      store[key] = value.toString()
+    setItem(email, value) {
+      store[email] = value.toString()
     },
     clear() {
       store = {}
