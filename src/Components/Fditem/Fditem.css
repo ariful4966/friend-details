@@ -10,8 +10,55 @@
     box-sizing: border-box;
     box-shadow: 0 0 10px #ddd;
     transition: .5s ease;
-    border-radius:5px;
+    border-radius: 5px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+
 }
+.friendDtails {
+    position: absolute;
+    left: 0;
+    bottom: -252px;
+    width: 100%;
+    height: 100%;
+    background: rgba(171, 139, 139, .7);
+    color: #fff;
+    transition: .6s all ease;
+
+    
+}
+img{
+    height: 100%;
+    display: block;
+}
+.friend-item:hover .friendDtails{
+    bottom: -120px;
+}
+
 .friendPic {border: 1px solid #ddd;
     box-shadow: inset 0 0 5px #ddd;}
+
+    .friendDtails h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+        color: #05632f;
+        font-weight: 800;
+    }
+    
+    .friendDtails h5 {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        color: #00c;
+        line-height: 20px;
+    }
+    
+    .friendDtails p {
+        color: #0dffde;
+        font-size: 18px;
+        margin: 0;
+        line-height: 38px;
+    }

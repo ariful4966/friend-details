@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Friend.css';
 import fakeData from '../../fakeData';
 import Fditem from '../Fditem/Fditem';
+import Fdinfo from '../Fdinfo/Fdinfo';
+
 
 
 const Friend = () => {
@@ -33,8 +35,9 @@ const Friend = () => {
                     
                 </div>
                 <div className="friends-about">
-                    <h3>About Friends</h3>
-                    <h5>Friend Item {frdetails.length}</h5>
+                   
+                   
+                    <Fdinfo frdetails={frdetails}></Fdinfo>
                 </div>
                 
             </div>
